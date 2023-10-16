@@ -1,0 +1,104 @@
+I1016 20:27:32.274462 140052808628032 dataset_info.py:565] Load dataset info from /root/tensorflow_datasets/movielens/1m-ratings/0.1.1
+I1016 20:27:32.278024 140052808628032 dataset_builder.py:522] Reusing dataset movielens (/root/tensorflow_datasets/movielens/1m-ratings/0.1.1)
+W1016 20:27:32.278288 140052808628032 feature.py:64] `TensorInfo.dtype` is deprecated. Please change your code to use NumPy with the field `TensorInfo.np_dtype` or use TensorFlow with the field `TensorInfo.tf_dtype`.
+I1016 20:27:32.326799 140052808628032 logging_logger.py:49] Constructing tf.data.Dataset movielens for split train, from /root/tensorflow_datasets/movielens/1m-ratings/0.1.1
+                                                                         INFO:tensorflow:Calling model_fn.
+I1016 20:27:32.386616 140052808628032 estimator.py:1162] Calling model_fn.
+I1016 20:27:32.386834 140052808628032 runner_utils.py:396] exit monolith_discovery!
+Traceback (most recent call last):
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/markdown/demo/demo_model.py", line 154, in <module>
+    app.run(main)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/pip_deps/pypi__absl_py/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/pip_deps/pypi__absl_py/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/markdown/demo/demo_model.py", line 150, in main
+    estimator.train(max_steps=1000000)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/estimator.py", line 460, in train
+    self.__est = distributed_train(config=self._runner_conf,
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 2129, in distributed_train
+    raise e
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 2101, in distributed_train
+    estimator = _do_worker_train(config, params, cluster, task, user_hooks)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 1843, in _do_worker_train
+    estimator.train(training.create_input_fn(config.mode),
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 349, in train
+    loss = self._train_model(input_fn, hooks, saving_listeners)
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1175, in _train_model
+    return self._train_model_default(input_fn, hooks, saving_listeners)
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1203, in _train_model_default
+    estimator_spec = self._call_model_fn(features, labels, ModeKeys.TRAIN,
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1163, in _call_model_fn
+    model_fn_results = self._model_fn(features=features, **kwargs)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 1640, in wrapped_model_fn
+    return model_fn(features, mode, config)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 1346, in model_fn
+    hash_table, hash_filters = create_hash_table_and_filters_fn()
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 849, in create_hash_table_and_filters_fn
+    slot_occurrence_threshold.occurrence_threshold = occurrence_threshold
+TypeError: None has type NoneType, but expected one of: int
+                                                                                                                                                                         I1016 20:28:01.070580 139651055798080 writer.py:301] Done writing /root/tensorflow_datasets/movielens/1m-ratings/0.1.1.incomplete4GJOCU/movielens-train.tfrecord*. Number of examples: 1000209 (shards: [250052, 250052, 250053, 250052])
+I1016 20:28:05.593069 139651055798080 cpu_training.py:374] MetricsHeartBeat thread stopped                                                                                
+I1016 20:28:05.595468 139651055798080 cpu_training.py:1710] Try to shutdown ps 0
+2023-10-16 20:28:05.605557: I external/org_tensorflow/tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+I1016 20:28:05.618209 139651055798080 cpu_training.py:1716] Shutdown ps 0 successfully!
+I1016 20:28:05.618244 140059013084992 cpu_training.py:1774] Ps 0 shutdown successfully!
+I1016 20:28:05.618453 139651055798080 cpu_training.py:1710] Try to shutdown ps 1
+I1016 20:28:05.619028 140059013084992 cpu_training.py:2156] Finished ps 0.
+I1016 20:28:05.619377 140059013084992 runner_utils.py:396] exit monolith_discovery!
+I1016 20:28:05.625733 139651055798080 cpu_training.py:1716] Shutdown ps 1 successfully!
+I1016 20:28:05.625777 140221694687040 cpu_training.py:1774] Ps 1 shutdown successfully!
+I1016 20:28:05.626537 140221694687040 cpu_training.py:2156] Finished ps 1.
+I1016 20:28:05.626905 140221694687040 runner_utils.py:396] exit monolith_discovery!
+I1016 20:28:05.627197 139651055798080 yarn_runtime.py:75] Current framework doesn't support kill. Ignore killing...
+I1016 20:28:05.627426 139651055798080 runner_utils.py:396] exit monolith_discovery!
+Traceback (most recent call last):
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/markdown/demo/demo_model.py", line 154, in <module>
+    app.run(main)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/pip_deps/pypi__absl_py/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/pip_deps/pypi__absl_py/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/markdown/demo/demo_model.py", line 150, in main
+    estimator.train(max_steps=1000000)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/estimator.py", line 460, in train
+    self.__est = distributed_train(config=self._runner_conf,
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 2129, in distributed_train
+    raise e
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 2101, in distributed_train
+    estimator = _do_worker_train(config, params, cluster, task, user_hooks)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 1832, in _do_worker_train
+    training = CpuTraining(config, native_task)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 645, in __init__
+    self._feature_configs_do_not_refer_directly = self._collect_feature_name_to_table_config(
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 969, in _collect_feature_name_to_table_config
+    features = self._generate_valid_features()
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/cpu_training.py", line 952, in _generate_valid_features
+    dataset = input_fn()
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/monolith/native_training/native_model.py", line 419, in input_fn_internal
+    return self.input_fn(mode)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/__main__/markdown/demo/demo_model.py", line 82, in input_fn
+    dataset = get_preprocessed_dataset('1m')
+  File "/monolith/markdown/demo/ml_dataset.py", line 21, in get_preprocessed_dataset
+    ratings = tfds.load(f"movielens/{size}-ratings", split="train")
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/wrapt/wrappers.py", line 563, in __call__
+    return self._self_wrapper(self.__wrapped__, self._self_instance,
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_datasets/core/logging/__init__.py", line 169, in __call__
+    return function(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_datasets/core/load.py", line 617, in load
+    dbuilder.download_and_prepare(**download_and_prepare_kwargs)
+  File "/root/.cache/bazel/_bazel_root/ac9c84652217b72394d3e402703eb26b/execroot/__main__/bazel-out/k8-opt/bin/markdown/demo/demo_local_runner.runfiles/wrapt/wrappers.py", line 602, in __call__
+    return self._self_wrapper(self.__wrapped__, self._self_instance,
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_datasets/core/logging/__init__.py", line 169, in __call__
+    return function(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_datasets/core/dataset_builder.py", line 653, in download_and_prepare
+    self.info.update_data_dir(self._data_dir)
+  File "/usr/local/lib/python3.8/contextlib.py", line 120, in __exit__
+    next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/tensorflow_datasets/core/utils/py_utils.py", line 328, in incomplete_dir
+    tmp_path.rename(dirname)
+  File "/usr/local/lib/python3.8/site-packages/etils/epath/gpath.py", line 237, in rename
+    backend.rename(self._path_str, os.fspath(target))
+  File "/usr/local/lib/python3.8/site-packages/etils/epath/backend.py", line 154, in rename
+    raise FileExistsError(
+FileExistsError: Cannot rename /root/tensorflow_datasets/movielens/1m-ratings/0.1.1.incomplete4GJOCU. Destination /root/tensorflow_datasets/movielens/1m-ratings/0.1.1 already exists.

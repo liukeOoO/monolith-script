@@ -1,0 +1,73 @@
+I1016 20:22:03.209585 140052808628032 estimator.py:443] {
+  accelerator: None
+  clip_norm: 1000.0
+  cls: <class '__main__.MovieRankingBatchTraining'>
+  default_occurrence_threshold: 0
+  delimiter: "  "
+  dense_weight_decay: 0.0
+  enable_grads_and_vars_summary: False
+  eval: {
+    per_replica_batch_size: None
+    steps: None
+    steps_per_eval: 10000
+  }
+  feature_list: None
+  file_name: ""
+  input: {
+    eval_examples: None
+    train_examples: None
+  }
+  metrics: {
+    deep_insight_name: None
+    deep_insight_sample_ratio: 0.01
+    deep_insight_target: "ctr_head"
+    dump_filename: ""
+    enable_deep_insight: True
+    enable_file_metrics: False
+    enable_kafka_metrics: False
+    enable_tf2_profiler_hook: True
+    enable_throughput_hook: True
+    extra_fields_keys: []
+    file_base_name: "/vepfs/jaguar_deepinsight_results"
+    file_ext: "txt"
+    key_fn: None
+    layout_fn: None
+    parse_fn: None
+    use_data_service: False
+  }
+  mode: "train"
+  name: "MovieRankingBatchTraining"
+  output_fields: None
+  output_path: None
+  serving: {
+    export_dir_base: "exported_models"
+    export_mode: ExportMode.DISTRIBUTED
+    export_when_saving: False
+    export_with_cleared_entry_devices: False
+    export_with_gpu_allowed: False
+    shared_embedding: True
+    with_remote_gpu: False
+  }
+  sparse_norm_warmup_steps: None
+  train: {
+    dense_only_save_checkpoints_secs: None
+    dense_only_save_checkpoints_steps: None
+    file_pattern: None
+    fountain_model_name: ""
+    fountain_parse_on_server: False
+    fountain_precompute_value_rowids: False
+    fountain_zk_host: ""
+    label_key: "label"
+    max_pending_seconds_for_barrier: 30
+    max_steps: 1000000
+    per_replica_batch_size: None
+    repeat: False
+    sample_bias: 0.0
+    save_checkpoints_secs: None
+    save_checkpoints_steps: None
+    slow_start_steps: 0
+    steps: None
+    use_fountain: False
+    use_gpu_emb_table: False
+  }
+}
